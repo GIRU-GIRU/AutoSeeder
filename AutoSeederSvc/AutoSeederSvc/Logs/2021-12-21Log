@@ -1,0 +1,48 @@
+2021-12-21 03:28:11.194 +00:00 [INF] Starting AutoSeeder service
+2021-12-21 03:28:21.561 +00:00 [INF] User AFK
+2021-12-21 03:28:21.587 +00:00 [ERR] The system cannot find the file specified.
+2021-12-21 03:28:25.179 +00:00 [ERR] A task was canceled.
+2021-12-21 03:29:11.763 +00:00 [INF] Starting AutoSeeder service
+2021-12-21 03:29:22.430 +00:00 [ERR] A task was canceled.
+2021-12-21 03:41:51.152 +00:00 [INF] Starting AutoSeeder service
+2021-12-21 03:42:02.090 +00:00 [INF] User AFK
+2021-12-21 03:42:03.414 +00:00 [INF] User Back
+2021-12-21 03:42:15.044 +00:00 [INF] Service has been closed gracefully
+2021-12-21 03:42:15.080 +00:00 [ERR] A task was canceled.
+2021-12-21 03:53:38.940 +00:00 [INF] Starting AutoSeeder service
+2021-12-21 03:53:49.315 +00:00 [INF] User AFK
+2021-12-21 03:53:49.353 +00:00 [ERR] Failed to start process - The specified executable is not a valid application for this OS platform.
+2021-12-21 03:53:53.224 +00:00 [INF] Service has been closed gracefully
+2021-12-21 03:53:53.254 +00:00 [ERR] A task was canceled.
+2021-12-21 03:54:18.644 +00:00 [INF] Starting AutoSeeder service
+2021-12-21 03:54:28.976 +00:00 [INF] User AFK
+2021-12-21 03:54:35.109 +00:00 [INF] User Back
+2021-12-21 03:54:45.116 +00:00 [INF] User AFK
+2021-12-21 03:54:50.435 +00:00 [INF] Service has been closed gracefully
+2021-12-21 03:54:50.471 +00:00 [ERR] A task was canceled.
+2021-12-21 03:54:53.525 +00:00 [INF] Starting AutoSeeder service
+2021-12-21 03:55:03.879 +00:00 [INF] User AFK
+2021-12-21 03:55:12.799 +00:00 [INF] Service has been closed gracefully
+2021-12-21 03:55:12.833 +00:00 [ERR] A task was canceled.
+2021-12-21 03:55:43.840 +00:00 [INF] Starting AutoSeeder service
+2021-12-21 03:55:54.199 +00:00 [INF] User AFK
+2021-12-21 03:56:01.685 +00:00 [INF] Starting AutoSeeder service
+2021-12-21 03:56:12.027 +00:00 [INF] User AFK
+2021-12-21 03:56:36.270 +00:00 [INF] Starting AutoSeeder service
+2021-12-21 03:56:46.647 +00:00 [INF] User AFK
+2021-12-21 04:02:42.972 +00:00 [INF] Starting AutoSeeder service
+2021-12-21 04:02:53.374 +00:00 [INF] User AFK
+2021-12-21 04:02:53.381 +00:00 [INF] Found deluge already running
+2021-12-21 04:02:59.586 +00:00 [INF] User Back
+2021-12-21 04:02:59.589 +00:00 [INF] Killing System.String[]
+2021-12-21 04:03:31.789 +00:00 [INF] Starting AutoSeeder service
+2021-12-21 04:03:42.176 +00:00 [INF] User AFK
+2021-12-21 04:03:42.196 +00:00 [INF] Started deluge
+2021-12-21 04:03:51.156 +00:00 [INF] User Back
+2021-12-21 04:03:51.158 +00:00 [INF] Killing deluge
+2021-12-21 04:04:01.212 +00:00 [INF] User AFK
+2021-12-21 04:04:01.220 +00:00 [INF] Started deluge
+2021-12-21 04:04:09.617 +00:00 [INF] User Back
+2021-12-21 04:04:09.618 +00:00 [INF] Killing deluge
+2021-12-21 04:04:27.235 +00:00 [INF] Service has been closed gracefully
+2021-12-21 04:04:30.321 +00:00 [INF] User AFK
