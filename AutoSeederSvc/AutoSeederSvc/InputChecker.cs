@@ -9,7 +9,7 @@ namespace AutoSeederSvc
     public static class InputChecker
     {
         [DllImport("user32.dll")]
-        public static extern int GetAsyncKeyState(int KeyAsciiId);
+        private static extern int GetAsyncKeyState(int KeyAsciiId);
 
         public static Task<bool> CheckIfKeysAreBeingPressed()
         {

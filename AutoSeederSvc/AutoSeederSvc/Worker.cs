@@ -14,15 +14,13 @@ namespace AutoSeederSvc
         private readonly ILogger<Worker> _logger;
         private DateTime _timeUserGoesAway = DateTime.UtcNow.AddSeconds(10);
         bool _userIsAway = false;
-        ProgramManager _programManager;
+        IProgramManager _programManager;
 
-        public Worker(ILogger<Worker> logger)
+        public Worker(ILogger<Worker> logger, IProgramManager programManager)
         {
             _logger = logger;
-
-            _programManager = new ProgramManager(logger);
+            _programManager = programManager;
         }
-
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
@@ -32,28 +30,7 @@ namespace AutoSeederSvc
                 {
                     await Task.Delay(50, stoppingToken);
 
-                    bool userInputFound = await InputChecker.CheckIfKeysAreBeingPressed();
-
-                    if (userInputFound)
-                    {
-
-                        _timeUserGoesAway = AddAwayTime();
-
-
-                        if (_userIsAway)
-                        {
-                            await HandleUserBack();
-                        }
-
-                    }
-                    else if (DateTime.UtcNow > _timeUserGoesAway)
-                    {
-
-                        if (!_userIsAway)
-                        {
-                            await HandleUserAway();
-                        }
-                    }
+                    await DoWork();
                 }
             }
             catch (Exception ex)
@@ -69,6 +46,31 @@ namespace AutoSeederSvc
             return Task.CompletedTask;
         }
 
+        private async Task DoWork()
+        {
+            bool userInputFound = await InputChecker.CheckIfKeysAreBeingPressed();
+
+            if (userInputFound)
+            {
+
+                _timeUserGoesAway = AddAwayTime();
+
+
+                if (_userIsAway)
+                {
+                    await HandleUserBack();
+                }
+
+            }
+            else if (DateTime.UtcNow > _timeUserGoesAway)
+            {
+
+                if (!_userIsAway)
+                {
+                    await HandleUserAway();
+                }
+            }
+        }
         private Task HandleUserBack()
         {
             _userIsAway = false;
@@ -84,18 +86,19 @@ namespace AutoSeederSvc
             _logger.LogInformation("User AFK");
             _programManager.OpenPrograms(GetProgramsToStart());
 
-
             return Task.CompletedTask;
         }
 
         private DateTime AddAwayTime()
         {
+            //TODO hardcoding - add to json config
+
             return DateTime.UtcNow.AddSeconds(10);
         }
 
         private List<string> GetProgramsToStart()
         {
-            //TODO create a json config for this
+            //TODO hardcoding - add to json config
 
             List<string> programs = new List<string>();
 

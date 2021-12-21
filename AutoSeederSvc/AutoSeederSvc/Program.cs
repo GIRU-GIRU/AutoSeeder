@@ -12,34 +12,32 @@ namespace AutoSeederSvc
     {
         public static void Main(string[] args)
         {
-            string logDir = $"{Environment.CurrentDirectory}\\Logs\\{DateTime.Now.ToString("yyy-MM-dd")}Log";
+            string logFilePath = $"{Environment.CurrentDirectory}\\Logs\\{DateTime.Now.ToString("yyy-MM-dd")}Log";
 
             Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Debug()
             .MinimumLevel.Override("Microsoft", Serilog.Events.LogEventLevel.Warning)
             .Enrich.FromLogContext()
-            .WriteTo.File(logDir)
+            .WriteTo.File(logFilePath)
             .WriteTo.Console()
             .CreateLogger();
-
 
             try
             {
                 Log.Information("Starting AutoSeeder service");
+               
                 CreateHostBuilder(args).Build().Run();
             }
             catch (Exception ex)
             {
                 Log.Fatal($"Fatal error starting service - {ex.GetBaseException().Message}");
+
                 return;
             }
             finally
             {
                 Log.CloseAndFlush();
             }
-
-
-
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -48,6 +46,7 @@ namespace AutoSeederSvc
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddHostedService<Worker>();
+                    services.AddSingleton<IProgramManager, ProgramManager>();
                 })
             .UseSerilog();
     }
